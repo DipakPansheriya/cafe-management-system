@@ -5,6 +5,11 @@ const userRoute =  require('./router/userRoute')
 const app = express();
 const PORT = process.env.PORT || 9000;
 
+const cors = require('cors')
+
+app.use(cors({origin: "*"}));
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });

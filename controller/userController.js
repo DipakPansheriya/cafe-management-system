@@ -17,7 +17,9 @@ exports.createUser = async (req, res) => {
     try {
         const user = new registerDataSchema({
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            mobileNumber: req.body.mobileNumber,
+
         })
         await user.save()
         return res.status(200).json({ data: user, message: "user created successfully" });
